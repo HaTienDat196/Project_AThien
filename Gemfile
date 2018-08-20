@@ -11,6 +11,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise', '~> 4.1'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'jquery-rails'
+gem 'faker',          '1.7.3'
 
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
