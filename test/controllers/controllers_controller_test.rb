@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class ControllersControllerTest < ActionDispatch::IntegrationTest
@@ -5,17 +7,17 @@ class ControllersControllerTest < ActionDispatch::IntegrationTest
     @controller = controllers(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get controllers_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_controller_url
     assert_response :success
   end
 
-  test "should create controller" do
+  test 'should create controller' do
     assert_difference('Controller.count') do
       post controllers_url, params: { controller: { Users: @controller.Users } }
     end
@@ -23,22 +25,22 @@ class ControllersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to controller_url(Controller.last)
   end
 
-  test "should show controller" do
+  test 'should show controller' do
     get controller_url(@controller)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_controller_url(@controller)
     assert_response :success
   end
 
-  test "should update controller" do
+  test 'should update controller' do
     patch controller_url(@controller), params: { controller: { Users: @controller.Users } }
     assert_redirected_to controller_url(@controller)
   end
 
-  test "should destroy controller" do
+  test 'should destroy controller' do
     assert_difference('Controller.count', -1) do
       delete controller_url(@controller)
     end
