@@ -25,6 +25,8 @@ gem 'config'
 gem 'omniauth-linkedin'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
+gem 'omniauth-github'
+
 
 gem 'sass-rails', '~> 5.0'
 gem 'sqlite3'
