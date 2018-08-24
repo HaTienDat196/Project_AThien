@@ -1,4 +1,4 @@
-# encoding: utf-8
+# frozen_string_literal: true
 
 class AvatarUploader < CarrierWave::Uploader::Base
   storage :file
@@ -15,18 +15,18 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fill => [20, 20]
+    process resize_to_fill: [20, 20]
   end
 
   version :medium do
-    process :resize_to_fill => [60, 60]
+    process resize_to_fill: [60, 60]
   end
 
   version :small do
-    process :resize_to_fill => [70, 70]
+    process resize_to_fill: [70, 70]
   end
 
   def extension_white_list
-    %w(jpg jpeg gif png)
+    %w[jpg jpeg gif png]
   end
 end

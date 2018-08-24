@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable,:validatable,
          :recoverable, :rememberable,
          :omniauthable, omniauth_providers: %i[facebook google_oauth2 twitter github]
 
@@ -30,6 +30,6 @@ class User < ApplicationRecord
   private
 
   def avatar_size_validation
-    errors[:avatar] << "should be less than 500KB" if avatar.size > 0.5.megabytes
+    errors[:avatar] << 'should be less than 500KB' if avatar.size > 0.5.megabytes
   end
 end

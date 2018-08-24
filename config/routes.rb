@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'users/show' => 'users/show'
   get 'users/edit' => 'users/edit'
   root to: 'users#index'
-  resource :users, only: [:index, :show, :edit, :update]
+  resource :users, only: %i[index show edit update]
 
   as :user do
     get 'sign_up' => 'devise/registrations#new'

@@ -20,8 +20,7 @@ class UsersController < ApplicationController
     @user = User.find(id: params[:id])
   end
 
-  def index
-  end
+  def index; end
 
   def show
     @users = User.all.page(params[:page]).per(5)
@@ -41,12 +40,12 @@ class UsersController < ApplicationController
   end
 
   def destroy
-      @users = User.find(params[:id])
-      @users.destroy
+    @users = User.find(params[:id])
+    @users.destroy
 
-      flash.notice="User '#{@user.username}' was deleted"
+    flash.notice = "User '#{@user.username}' was deleted"
 
-      redirect_to root_path
+    redirect_to root_path
   end
 
   def admin_user
@@ -56,6 +55,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :birth, :password, :email, :id, )
+    params.require(:user).permit(:username, :birth, :password, :email, :id)
   end
 end
