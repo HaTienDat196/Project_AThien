@@ -5,6 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable,
          :omniauthable, omniauth_providers: %i[facebook google_oauth2 twitter]
 
+  mount_uploader :avatar, AvatarUploader
+  # User Avatar Validation
+  validates_integrity_of  :avatar
+  validates_processing_of :avatar
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session['devise.facebook_data'] &&
@@ -20,5 +25,11 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0, 20]
       user.username = auth.info.name
     end
+  end
+
+  private
+
+  def avatar_size_validation
+    errors[:avatar] << "should be less than 500KB" if avatar.size > 0.5.megabytes
   end
 end
