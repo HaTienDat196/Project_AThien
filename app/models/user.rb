@@ -3,7 +3,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable,
-         :omniauthable, omniauth_providers: %i[facebook google_oauth2 twitter]
+         :omniauthable, omniauth_providers: %i[facebook google_oauth2 twitter github]
 
   mount_uploader :avatar, AvatarUploader
   # User Avatar Validation
@@ -14,7 +14,7 @@ class User < ApplicationRecord
     super.tap do |user|
       if data = session['devise.facebook_data'] &&
                 session['devise.facebook_data']['extra']['raw_info']
-        user.email = data['email'] if user.email.blank?
+        users.email = data['email'] if user.email.blank?
       end
     end
   end

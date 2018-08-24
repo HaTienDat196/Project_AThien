@@ -13,6 +13,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     generic_callback('twitter')
   end
 
+  def github
+    generic_callback('github')
+  end
+
   def generic_callback(provider)
     @identity = User.from_omniauth(request.env['omniauth.auth'])
 
