@@ -19,7 +19,7 @@
               <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>
-            <% if current_user.admin? && !current_user?(user) %>
+            <% if current_user.admin? && !current_user?(users_url) %>
               <li><%= link_to "Show user", users_show_path   %></li>
             <% end %>
         <% else %>
