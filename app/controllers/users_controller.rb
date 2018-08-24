@@ -16,6 +16,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def editpassword
+    @user = current_user
+  end
+
   def userprofile
     @user = User.find(id: params[:id])
   end

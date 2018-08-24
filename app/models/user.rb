@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,:validatable,
          :recoverable, :rememberable,
          :omniauthable, omniauth_providers: %i[facebook google_oauth2 twitter github]
-
+  validates :username, presence: true
   mount_uploader :avatar, AvatarUploader
   # User Avatar Validation
   validates_integrity_of  :avatar

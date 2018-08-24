@@ -26,6 +26,8 @@ gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.1'
 gem 'ransack'
 gem 'rubocop'
+gem 'faker',          '1.7.3'
+
 
 gem 'sass-rails', '~> 5.0'
 gem 'sqlite3'

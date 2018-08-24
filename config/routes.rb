@@ -3,8 +3,9 @@
 Rails.application.routes.draw do
   get 'users/show' => 'users/show'
   get 'users/edit' => 'users/edit'
+  get 'users/editpassword' => 'users/editpassword'
   root to: 'users#index'
-  resource :users, only: %i[index show edit update]
+  resource :users, only: %i[index show edit update editpassword]
 
   as :user do
     get 'sign_up' => 'devise/registrations#new'
