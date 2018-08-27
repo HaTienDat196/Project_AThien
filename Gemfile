@@ -42,6 +42,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails'
+  gem 'rspec'
+  gem 'rspec-core'
+  gem 'capybara', '>= 2.15'
+  gem 'factory_girl_rails'
+  gem 'faker',          '1.7.3'
 end
 
 group :development do
@@ -55,6 +61,8 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'database_cleaner'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

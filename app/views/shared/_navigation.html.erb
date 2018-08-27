@@ -16,7 +16,7 @@
               <li><%= link_to 'Password', users_editpassword_path %></li>
               <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
             </ul>
-          </li>
+          </li>.
             <% if current_user.admin? && !current_user?(users_url) %>
               <li><%= link_to "Admin Manager", users_show_path   %></li>
             <% end %>
