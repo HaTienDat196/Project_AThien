@@ -1,0 +1,31 @@
+!!!
+%html
+  %body
+    = render 'users/headeruser'
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title Trần Thị Quyên
+    %link{:href => "style.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Belgrano", :rel => "stylesheet", :type => "text/css"}/
+    / jQuery file
+    %script{:src => "js/jquery.min.js"}
+    %script{:charset => "utf-8", :src => "js/jquery.tabify.js", :type => "text/javascript"}
+    :javascript
+      var $ = jQuery.noConflict();
+      $(function() {
+      $('#tabsmenu').tabify();
+      $(".toggle_container").hide();
+      $(".trigger").click(function(){
+        $(this).toggleClass("active").next().slideToggle("slow");
+        return false;
+      });
+      });
+    %table#rounded-corner
+      %tbody
+        %tr.odd
+          %td
+            - @users.each do |user|
+              = render user
+    .form_sub_buttons
+      %a.button.green{:href => "#"} Edit selected
+      %a.button.red{:href => "#"} Delete selected
+    = paginate @users, theme: 'twitter-bootstrap-3'

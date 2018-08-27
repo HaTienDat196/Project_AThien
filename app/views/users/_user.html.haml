@@ -1,0 +1,10 @@
+%table#rounded-corner
+  %tbody
+    %tr.odd
+      %td
+        %input{:name => "", :type => "checkbox"}/
+      %td= current_user.username
+      %td= current_user.email
+      %td= current_user.birth
+      %td= current_user.created_at
+      %td= current_user.updated_at

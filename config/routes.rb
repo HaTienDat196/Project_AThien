@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resource :users, only: %i[index show edit update] do
     get 'editpassword', on: :member
     get 'show', on: :member
-    get 'edit',on: :member
+    get 'edit', on: :member
   end
 
   as :user do

@@ -11,8 +11,10 @@ gem 'carrierwave', '~> 0.10.0'
 gem 'config'
 gem 'devise', '~> 4.1'
 gem 'faker', '1.7.3'
+gem 'faker', '1.7.3'
 gem 'figaro'
 gem 'google-api-client', '~> 0.7.1'
+gem 'haml'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'mini_magick', '~> 4.3'
@@ -26,8 +28,6 @@ gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.1'
 gem 'ransack'
 gem 'rubocop'
-gem 'faker',          '1.7.3'
-
 
 gem 'sass-rails', '~> 5.0'
 gem 'sqlite3'
@@ -42,14 +42,14 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'rspec-rails'
-  gem 'rspec'
-  gem 'rspec-core'
   gem 'capybara', '>= 2.15'
   gem 'factory_girl_rails'
-  gem 'faker',          '1.7.3'
-  gem 'simplecov', :require => false
-  gem 'simplecov-rcov', :require => false
+  gem 'faker', '1.7.3'
+  gem 'rspec'
+  gem 'rspec-core'
+  gem 'rspec-rails'
+  gem 'simplecov', require: false
+  gem 'simplecov-rcov', require: false
 end
 
 group :development do
@@ -62,9 +62,9 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'chromedriver-helper'
+  gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 3.1'
-  gem 'database_cleaner'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
