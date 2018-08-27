@@ -48,6 +48,8 @@ group :development, :test do
   gem 'capybara', '>= 2.15'
   gem 'factory_girl_rails'
   gem 'faker',          '1.7.3'
+  gem 'simplecov', :require => false
+  gem 'simplecov-rcov', :require => false
 end
 
 group :development do

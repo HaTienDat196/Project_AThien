@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  mount_uploader :avatar, AvatarUploader
   devise :database_authenticatable, :registerable,:validatable,
          :recoverable, :rememberable,
          :omniauthable, omniauth_providers: %i[facebook google_oauth2 twitter github]
   validates :username, presence: true
-  mount_uploader :avatar, AvatarUploader
-  # User Avatar Validation
   validates_integrity_of  :avatar
   validates_processing_of :avatar
 
