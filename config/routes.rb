@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'users/show' => 'users/show'
-  get 'users/edit' => 'users/edit'
-  get 'users/editpassword' => 'users/editpassword'
   root to: 'users#index'
-  resource :users, only: %i[index show edit update editpassword]
+  resource :users, only: %i[index show edit update] do
+    get 'editpassword', on: :member
+    get 'show', on: :member
+    get 'edit',on: :member
+  end
 
   as :user do
     get 'sign_up' => 'devise/registrations#new'
