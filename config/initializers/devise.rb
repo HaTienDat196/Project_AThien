@@ -17,4 +17,6 @@ Devise.setup do |config|
   config.omniauth :google_oauth2, ENV['GOOGLE_OAUTH2_APP_ID'], ENV['GOOGLE_OAUTH2_APP_SECRET'], scope: 'email,profile,offline', prompt: 'consent'
   config.omniauth :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
   config.omniauth :github, ENV['CLIENT_ID'], ENV['CLIENT_SECRET']
+  config.authentication_keys = [ :login ]
+  config.scoped_views = true
 end
