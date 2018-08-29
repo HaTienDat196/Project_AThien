@@ -30,7 +30,6 @@ gem 'ransack'
 gem 'rubocop'
 
 gem 'sass-rails', '~> 5.0'
-gem 'sqlite3'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'coffee-rails', '~> 4.2'
@@ -53,6 +52,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'sqlite3'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -65,6 +65,10 @@ group :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 3.1'
+end
+
+group :production do
+  gem 'pg'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
